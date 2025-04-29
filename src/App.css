@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+ border: 5px solid red;
+}
+
+@font-face {
+  font-family: "mega";
+  src: url("/fonts/megatroplis.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "space-regular";
+  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "comic";
+  src: url("/fonts/Child\ Hood.otf") format("opentype");
+}
+
+@layer utilities {
+  .neumorphism {
+    /* @apply bg-gradient-to-br from-[#f1f1f1] to-[#f0f0f0] shadow-[5px_5px_25px_0px_rgba(0,0,0,0.8),-5px_-x_25px_0px_rgba(255,255,255,0.8),inset_5px_5px_10px_0px_rgba(0,0,0,0.1),inset_-5px_-5px_10px_0px_rgba(255,255,255,0.5)] rounded-3xl; */
+    @apply bg-gradient-to-br from-[#525252] to-[#525252] shadow-[5px_5px_15px_0px_rgba(0,0,0,0.2),-5px_-5px_15px_0px_rgba(255,255,255),inset_5px_5px_10px_0px_rgba(0,0,0,0.2),inset_-5px_-5px_10px_0px_rgba(255,255,255)] rounded-3xl;
+  }
+  .neu {
+    /* @apply bg-gradient-to-br from-[#f1f1f1] to-[#f0f0f0] shadow-[5px_5px_25px_0px_rgba(0,0,0,0.8),-5px_-x_25px_0px_rgba(255,255,255,0.8),inset_5px_5px_10px_0px_rgba(0,0,0,0.1),inset_-5px_-5px_10px_0px_rgba(255,255,255,0.5)] rounded-3xl; */
+    @apply shadow-[5px_5px_15px_0px_rgba(0,0,0,0.2),-5px_-5px_15px_0px_rgba(255,255,255),inset_5px_5px_10px_0px_rgba(0,0,0,0.2),inset_-5px_-5px_10px_0px_rgba(255,255,255)] rounded-3xl;
+  }
+
+  .teared{
+    background: url("/teared.png") no-repeat;
+    background-blend-mode: color-dodge;
+    background-size: 90%;
+    background-position: top left;
+  }
+
+  .step-gradient{
+    /* background: linear-gradient(
+  90deg,
+  rgb(27, 27, 27) 15%,
+  rgb(44, 44, 45) 20%,
+  rgb(75, 75, 77) 25%,
+  rgba(75, 75, 77) 40%,
+  rgb(132, 132, 132) 45%,
+  rgb(139, 139, 139) 60%,
+  rgb(163, 163, 163) 65%,
+  rgb(165, 165, 165) 80%,
+  rgb(198, 198, 198) 85%,
+  rgb(198, 198, 198) 100%
+); */
+    background: linear-gradient(
+      to right,
+      rgb(69, 69, 69) 15%,
+      rgb(70, 70, 70) 25%,
+      rgb(100, 100, 100) 25%,
+      rgba(100, 100, 100) 45%,
+      rgb(150, 150, 150) 45%,
+      rgb(170, 170, 170) 65%,
+      rgb(190, 190, 190) 65%,
+      rgb(200, 200, 200) 85%,
+      rgb(220, 220, 220) 85%,
+      rgb(230, 230, 230) 100%
+    );
+  }
+
+
+  .neumorphism-2 {
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px rgb(246, 94, 71);
+  }
+
+
+  .inset-bottom-left-shadow{
+    @apply shadow-[inset_-5px_-5px_15px_0px_rgba(255,255,255)];
+  }
+
+
+  .inset-bottom-shadow{
+    @apply shadow-[inset_0px_-6px_10px_0px_rgba(255,255,255,1)];
+  }
+
+  .pattern{
+    background: url('/pattern2.png') left center repeat;
+    background-size: 1000px;
+    background-blend-mode: darken;
+    background-position-y: 37%;
+  }
+
+  .back {
+    animation: back;
+    animation-range: scroll;
+  }
+
+  .bg-gradient-1 {
+    background: linear-gradient(to bottom right, #0081a7, #00afb9);
+  }
+
+  .translate-z-10 {
+    transform: translateZ(500px);
+    z-index: 900;
+    scale: 1.2;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+    perspective: 5000px;
+    isolation: isolate;
+  }
+
+  .text-shadow {
+    text-shadow: 2px 1px 2px rgb(255, 255, 255);
+  }
+  .text-shadow1 {
+    text-shadow: 0px 1px 0px rgb(255, 255, 255);
+    filter: drop-shadow(0px 2px 0px rgb(255, 255, 255));
+
+  }
+  .text-shadow2 {
+    text-shadow: 5px 5px 0px rgb(255, 255, 255);
+  }
+  .ripple{
+    position: relative;
+    /* overflow: hidden; */
+    isolation: isolate;
+  }
+
+  .ripple::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    /* opacity: 0; */
+    pointer-events: none;
+    z-index: -1;
+    
+  }
+
+  .animate-delay-500{
+    animation-delay: 500ms;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes back {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  20% {
+    display: block;
+  }
+}
+
+
+.inset-shadow{
+  /* box-shadow:  2px 2px 10px 0px rgba(0, 0, 0, 1), -2px -2px 10px 0px rgba(255, 255, 255, 1); */
+}
