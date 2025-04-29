@@ -62,7 +62,6 @@ export const router = createBrowserRouter([
 
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "motion/react";
-import Filters from "./pages/text/Filter";
 
 function BackToTopButton() {
   // State to track if the button should be visible
