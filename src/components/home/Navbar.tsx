@@ -37,10 +37,10 @@ function Navbar() {
   return (
     <nav className={"border-b pt-12 block md:hidden"}>
       <div className="pb-4">
-        <p className="text-sm text-center">
+        {/* <p className="text-sm text-center">
           This site is under construction. Visit Again.
         </p>
-        <p className="text-sm text-center">Sale Starts Soon...</p>
+        <p className="text-sm text-center">Sale Starts Soon...</p> */}
       </div>
       <ul
         className={

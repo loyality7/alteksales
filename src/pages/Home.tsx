@@ -89,12 +89,7 @@ const HomePage = () => {
   return (
     <div className="font-sans">
       <div className="md:mt-16 hidden md:block">
-        <div className="pb-4">
-          <p className="text-sm text-center">
-            This site is under construction. Visit Again.
-          </p>
-          <p className="text-sm text-center">Sale Starts Soon...</p>
-        </div>
+      
       </div>
       <div>
         <Navbar />
@@ -177,19 +172,19 @@ const HomePage = () => {
         <HeadingWithLabel title="Laptop Types" />
         <motion.div
           variants={parentVariants}
-          initial="initial"
-          whileInView={"animate"}
+          initial="animate"
           className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gamd:p-8 p-4 justify-items-center"
         >
           {laptopTypes.map((category, index) => (
             <MotionLink
               variants={childVariants}
+              initial="animate"
               key={category.subcategory + index}
               to={`/category/${category.category}?subcategory=${category.subcategory}`}
-              // to={`/brands/${category.image}`}
               className="text-center p-6 shadow group rounded-xl"
             >
               <img
+                loading="eager"
                 src={category.image}
                 alt={category.subcategory}
                 className="w-full h-32 object-contain group-hover:scale-105 transition-all duration-500"
@@ -203,25 +198,6 @@ const HomePage = () => {
       </section>
 
       {/* New Accessories */}
-      {/* <section
-        id="new-accessories"
-        className="mt-10 scroll-mt-24 md:p-8 p-4 rounded-3xl neu mx-4 bg-gradient-2 preserve-3d "
-      >
-        <h2 className="text-2xl font-semibold rounded-xl mb-4 -translate-y-12 absolute text-shadow">
-          New Accessories
-        </h2>
-        <motion.div
-          variants={parentVariants}
-          initial="initial"
-          whileInView={"animate"}
-          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gamd:p-8 p-4 justify-items-center"
-        >
-          {newAccessories.map((category, index) => (
-            <CategoryCard key={index} {...category} />
-          ))}
-        </motion.div>
-      </section> */}
-      {/* New Accessories */}
       <section
         id="new-accessories"
         className="mt-10 scroll-mt-24 md:p-8 p-4 rounded-3xl neu mx-4  preserve-3d "
@@ -230,23 +206,23 @@ const HomePage = () => {
 
         <motion.div
           variants={parentVariants}
-          initial="initial"
-          whileInView={"animate"}
+          initial="animate"
           className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gamd:p-8 p-4 justify-items-center"
         >
           {Accessories.map((category, index) => (
             <motion.div
               variants={childVariants}
+              initial="animate"
               key={index + category.subcategory}
               className="relative h-52 md:h-60 max-w-full w-48"
             >
               <Link
-                // to={`/category/${category}?subcategory=${subcategory}`}
                 to={`/brands/${category.subcategory}`}
                 className="text-center p-6 group rounded-xl bg-gradient-to-b from-[#ffffff] to-[#f65e47] backdrop-blur-md block transition-all duration-500 h-full w-full absolute hover:h-64 z-20 translate-z-0 hover:translate-z-10 shadow-[inset_-0px_-10px_10.px_0px_rgb(246,94,71,1)]"
               >
                 <div className="">
                   <img
+                    loading="eager"
                     src={category.image}
                     alt={category.subcategory}
                     className="w-full h-32 object-contain group-hover:-translate-y-20 transition-all duration-500"
@@ -262,25 +238,6 @@ const HomePage = () => {
                   >
                     View Details
                   </Link>
-                  {/* <Link
-                    to={`/brands/${category.subcategory}`}
-                    className="text-sm  text-center self-center text-slate-900 rounded"
-                  >
-                    View Details
-                  </Link>
-                  <Link
-                    to={`/brands/${category.subcategory}`}
-                    className="text-sm  text-center self-center text-slate-900 rounded"
-                  >
-                    View Details
-                  </Link> */}
-                  {/* <div className=" flex-col flex justify-start">
-                    <motion.ul className="flex flex-col justify-start text-start text-slate-700 gap-1 text-xs" initial="initial" whileInView={"animate"}>
-                      <li>wired</li>
-                      <li>wireless</li>
-                      <li>more</li>
-                    </motion.ul>
-                  </div> */}
                 </div>
               </Link>
             </motion.div>
@@ -289,7 +246,6 @@ const HomePage = () => {
       </section>
 
       {/* Laptop Spares & Accessories */}
-
       <section
         id="spares-and-services"
         className="mt-10 scroll-mt-24 md:p-8 p-4 rounded-3xl neumorphism mx-4 bg-gradient-2 preserve-3d "
@@ -297,12 +253,17 @@ const HomePage = () => {
         <HeadingWithLabel title="Laptop Spares & Services" />
         <motion.div
           variants={parentVariants}
-          initial="initial"
-          whileInView={"animate"}
+          initial="animate"
           className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gamd:p-8 p-4 justify-items-center"
         >
           {laptopSpares.map((category, index) => (
-            <CategoryCard key={index} {...category} />
+            <motion.div
+              key={index}
+              variants={childVariants}
+              initial="animate"
+            >
+              <CategoryCard {...category} />
+            </motion.div>
           ))}
         </motion.div>
       </section>

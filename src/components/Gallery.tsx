@@ -153,18 +153,19 @@ const Gallery: React.FC = () => {
       {/* Gallery Grid */}
       <motion.div
         variants={parentVariants}
-        initial="initial"
-        whileInView="animate"
+        initial="animate"
         className="grid grid-flow-dense grid-cols-3 bg-gray-50 md:grid-cols-5 md:gap-4 gap-4 auto-rows-[140px] sm:auto-rows-[150px]"
       >
         {images.map((image, index) => (
           <motion.button
             key={index}
             variants={childVariants}
+            initial="animate"
             className={`relative bg-gray-50 hover:shadow-[0px_0px_20px_0px_rgba(255,255,255)] focus:shadow-[0px_0px_20px_0px_rgba(255,255,255)] transition-all duration-500 rounded-md md:rounded-3xl w-full h-full flex justify-center items-center cursor-pointer ${image.size}`}
             onClick={() => handleImageClick(image.src)}
           >
             <motion.img
+              loading="eager"
               src={image.src}
               alt={`Gallery Image ${index + 1}`}
               className="object-cover w-full h-full hover:shadow-xl shadow-white"

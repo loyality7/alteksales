@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-import { parentVariants } from "../../constants/motionVarients";
 import HeadingWithLabel from "../HeadingWithLabel";
 
 export const SectionWrapper = ({
@@ -28,15 +26,9 @@ export const SectionWrapper = ({
           For bulk orders.
         </li>
       </ul>
-      <motion.div
-        variants={parentVariants}
-        initial="initial"
-        whileInView={"animate"}
-        viewport={{ once: true, amount: 0.5 }}
-        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 justify-items-center"
-      >
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 justify-items-center">
         {children}
-      </motion.div>
+      </div>
     </section>
   );
 };
