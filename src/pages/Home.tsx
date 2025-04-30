@@ -14,8 +14,6 @@ import { childVariants, parentVariants } from "../constants/motionVarients";
 import { allProducts } from "../constants/productDataR";
 import HowItWorks from "../components/home/HowItWorks";
 
-
-
 const Accessories = allProducts.accessories
   .sort((a, b) => {
     return b.products.length - a.products.length;

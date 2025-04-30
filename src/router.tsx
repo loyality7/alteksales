@@ -10,6 +10,7 @@ import Brands from "./pages/Brands";
 import { ArrowUp, Phone } from "react-feather";
 // import AccessoriesProductDetails from "./pages/AccessoriesProductDetails";
 import AccessoriesProductDetails from "./pages/AccessoriesProductDetails";
+import Filter from "./pages/text/Filter";
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +45,10 @@ export const router = createBrowserRouter([
         path: "/brands/:brand",
         element: <Brands />,
       },
-  
+      {
+        path: "/filter",
+        element: <Filter />,
+      },
       {
         path: "*",
         element: (
@@ -62,6 +66,7 @@ export const router = createBrowserRouter([
 
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "motion/react";
+import Filters from "./pages/text/FIlter";
 
 function BackToTopButton() {
   // State to track if the button should be visible
