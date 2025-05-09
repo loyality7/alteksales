@@ -126,13 +126,13 @@ function Layout() {
 
         <div className="fixed bottom-6 right-6 flex gap-10 flex-col">
           <Link
-            to="tel:8861723693"
+            to="tel:9019962904"
             className="size-9 bg-emerald-600 p-2 rounded-full text-white flex justify-center items-center relative ripple @apply before:bg-emerald-500/40 before:animate-ping"
           >
             <Phone size={16} />
           </Link>
           <Link
-            to="https://api.whatsapp.com/send?phone=918861723693"
+            to="https://api.whatsapp.com/send?phone=919019962904"
             className="size-9 bg-emerald-600 p-2 rounded-full text-white flex justify-center items-center ripple @apply before:bg-emerald-500/40 before:animate-ping before:animation-delay-[500ms]"
           >
             {/* <MessageSquare size={16} /> */}
