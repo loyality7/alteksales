@@ -2,28 +2,32 @@ import { TCartItem } from "../store/cartSlice";
 import { currencyFormatter } from "./currencyFormatter";
 
 export const handleSendMessage = (products: TCartItem[], price: number) => {
-  const message = `Product Details: \n\n${products
+  const message = `🛒 *Cart Details*\n\n${products
     .map((item, i) => {
-      // Define maximum column widths for labels and values
-      const labelWidth = 12; // Width of label columns like 'ProductId', 'Name', etc.
-
-      // Format each product detail with padding for alignment// Ensure equal space after ProductId
+      // Format specifications if they exist
+      const specsText = item.specifications
+        ? `\n*Specifications:*\n${item.specifications
+            .map((spec) => `• ${spec.key}: ${spec.value}`)
+            .join("\n")}`
+        : "";
 
       return (
-        `Product ${i + 1}: \nProductId    : ${item.id
-          .toString()
-          .padEnd(labelWidth)}\n` +
-        `Name          : ${item.name.padEnd(labelWidth)}\n` +
-        `Price            : ${item.price.toString().padEnd(labelWidth)}\n` +
-        `Quantity      : ${item.quantity.toString().padEnd(labelWidth)}\n \n` +
-        `------`
+        `*Product ${i + 1}*\n` +
+        `📱 *Name:* ${item.name}\n` +
+        `🆔 *Product ID:* ${item.id}\n` +
+        `💰 *Price:* ${currencyFormatter(item.price)}\n` +
+        `📦 *Quantity:* ${item.quantity}\n` +
+        `💵 *Subtotal:* ${currencyFormatter(item.price * item.quantity)}` +
+        specsText +
+        `\n\n${"─".repeat(30)}\n`
       );
     })
-    .join("\n")} \nTotal Items  : ${
-    products.length
-  } \nTotal Price   : ${currencyFormatter(
-    price
-  )} \n\nPlease let me know if you have any questions.`.trim();
+    .join("\n")}\n\n` +
+    `*Summary*\n` +
+    `📊 *Total Items:* ${products.length}\n` +
+    `📦 *Total Quantity:* ${products.reduce((acc, item) => acc + item.quantity, 0)}\n` +
+    `💰 *Total Amount:* ${currencyFormatter(price)}\n\n` +
+    `Please contact me for delivery instructions and software installation details.`.trim();
 
   console.log(message);
 
@@ -35,6 +39,6 @@ export const handleSendMessage = (products: TCartItem[], price: number) => {
   // WhatsApp URL
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-  // Open in a new tab (uncomment this if you want it to open automatically)
+  // Open in a new tab
   window.open(whatsappUrl, "_blank");
 };
