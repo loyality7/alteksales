@@ -27,7 +27,7 @@ export const handleSendMessage = (products: TCartItem[], price: number) => {
     `📊 *Total Items:* ${products.length}\n` +
     `📦 *Total Quantity:* ${products.reduce((acc, item) => acc + item.quantity, 0)}\n` +
     `💰 *Total Amount:* ${currencyFormatter(price)}\n\n` +
-    `Please contact me for delivery instructions and software installation details.`.trim();
+    `Thank you! One of our employees will call you shortly for delivery and software installation instructions.`.trim();
 
   console.log(message);
 
