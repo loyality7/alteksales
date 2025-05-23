@@ -22,7 +22,7 @@ const Contact = () => {
               </p>
             </Link>
             <Link
-              to={"tel:+919019962904"}
+              to={"tel:+919019926904"}
               className="flex items-center gap-2 text-sm"
             ></Link>
             <Link
@@ -33,13 +33,13 @@ const Contact = () => {
               <span>hr@altekinstitution.com</span>
             </Link>
             <Link
-              to={"https://api.whatsapp.com/send?phone=919019962904"}
+              to={"https://api.whatsapp.com/send?phone=919019926904"}
               className="text-sm flex items-center gap-1"
             >
               {/* <img src={""} /> */}
               {/* <WhatsApp fontSize="small" /> */}
               <img src={"/whatsapp.svg"} alt="whatsapp" className="w-6" />
-              <span>+91 9019962904</span>
+              <span>+91 9019926904</span>
               <PhoneCall size={16} className="text-blue-500" />
             </Link>
           </div>
@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="flex-1 w-full flex justify-center items-center">
           <Link
             className=" flex flex-col w-full items-center gap-4 justify-center relative"
-            to={"https://api.whatsapp.com/send?phone=919019962904"}
+            to={"https://api.whatsapp.com/send?phone=919019926904"}
             target="_blank"
           >
             <div className="w-26 h-26 absolute -top-10 right-4">

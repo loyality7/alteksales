@@ -129,7 +129,7 @@ const HomePage = () => {
             <div className="flex gap-2 items-center">
               <p className="text-slate-800">Chat</p>
               <Link
-                to="https://api.whatsapp.com/send?phone=919019962904"
+                to="https://api.whatsapp.com/send?phone=919019926904"
                 className="size-7 bg-emerald-600 p-2 rounded-full text-white flex justify-center items-center before:bg-emerald-500/40 before:animate-ping before:animation-delay-[500ms]"
               >
                 {/* <MessageSquare size={16} /> */}
@@ -139,7 +139,7 @@ const HomePage = () => {
             <div className="flex gap-2 items-center pl-6">
               <p className="text-slate-800">Call</p>
               <Link
-                to="tel:9019962904"
+                to="tel:9019926904"
                 className="size-7 bg-emerald-600 p-2 rounded-full text-white flex justify-center items-center relative  before:bg-emerald-500/40 before:animate-ping"
               >
                 <Phone size={16} />
