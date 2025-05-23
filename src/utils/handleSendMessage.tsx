@@ -19,7 +19,7 @@ export const handleSendMessage = (products: TCartItem[], price: number) => {
         `📦 *Quantity:* ${item.quantity}\n` +
         `💵 *Subtotal:* ${currencyFormatter(item.price * item.quantity)}` +
         specsText +
-        `\n\n${"─".repeat(30)}\n`
+        `\n\n${"─".repeat(25)}\n`
       );
     })
     .join("\n")}\n\n` +
