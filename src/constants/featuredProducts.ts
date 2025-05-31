@@ -6,9 +6,9 @@ export const featuredProducts: TProduct[] = [
     id: 11009,
     name: "Dell Latitude 5420 Core i5 11th Gen",
     price: 36500,
-    originalPrice: 42999,
-    quantity: 1,
     stock: 5,
+   originalPrice: 42999,
+    quantity: 1,
     images: {
       links: [
         "/accessories/laptop-types/Dell Latitude 5420 Core i5 11th Gen.png",
@@ -75,7 +75,7 @@ export const featuredProducts: TProduct[] = [
     name: "hp 8200-6200 sff Core i5 2nd Gen",
     price: 13500,
     originalPrice: 25999,
-    stock: 30,
+    stock: 8,
     quantity: 1,
     images: {
       links: ["/accessories/laptop-types/hp 8200-6200 sff Core i5 2nd Gen.png"],
@@ -110,7 +110,7 @@ export const featuredProducts: TProduct[] = [
     name: "DELL LATITUDE 5490 Core i5 8th Gen",
     price: 21200,
     originalPrice: 25999,
-    stock: 30,
+    stock: 5,
     quantity: 1,
     images: {
       links: [
