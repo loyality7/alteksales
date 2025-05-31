@@ -272,6 +272,38 @@ export const featuredProducts: TProduct[] = [
       { key: "Computer Memory Type", value: "DDR3 SDRAM" },
     ],
   },
+  {
+    id: 11009,
+    name: "Dell Latitude 5420 Core i5 11th Gen",
+    price: 36500,
+    originalPrice: 42999,
+    quantity: 1,
+    stock: 5,
+    images: {
+      links: [
+        "/accessories/laptop-types/Dell Latitude 5420 Core i5 11th Gen.png",
+      ],
+      imgCount: 4,
+    },
+    description:
+      "High-performance business laptop with Intel Core i5 11th Gen, 16GB RAM, 256GB SSD, and a stunning 14-inch Full HD touch display.",
+    category: "computers",
+    subcategory: "laptop-types",
+    brand: "Dell",
+    reviews: [],
+    rating: 4.7,
+    specifications: [
+      { key: "Processor", value: "Intel Core i5 11th Gen" },
+      { key: "RAM", value: "16 GB DDR4" },
+      { key: "Storage", value: "256 GB SSD" },
+      { key: "Display", value: "14-inch Full HD Touch Screen" },
+      { key: "Power Supply", value: "65W AC Adapter" },
+      { key: "Brand", value: "Dell" },
+      { key: "Series", value: "Latitude 5420" },
+      { key: "Operating System", value: "Windows 10 Pro" },
+      { key: "Graphics", value: "Intel Iris Xe Graphics" }
+    ],
+  }
   // {
   //   id: 200012,
   //   name: "Dell Precision 7520 Intel Core i7 - 6th Gen",
